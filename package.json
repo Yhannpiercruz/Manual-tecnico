@@ -1,0 +1,12 @@
+{
+  "name": "manual-tecnico",
+  "version": "1.0.0",
+  "description": "Proyecto Manual Tecnico",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}

@@ -1,12 +1,15 @@
 {
   "name": "manual-tecnico",
   "version": "1.0.0",
-  "description": "Proyecto Manual Tecnico",
-  "main": "index.js",
+  "description": "Proyecto Manual Tecnico HTML estatico",
+  "private": true,
   "scripts": {
-    "start": "npx serve ."
+    "start": "serve -s . -l $PORT"
   },
   "dependencies": {
     "serve": "^14.2.0"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }

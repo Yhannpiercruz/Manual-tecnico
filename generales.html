@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes Generales - Manual Técnico</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-circle"></div>
+                <span>RENACER</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>Navegación</h3>
+            <button class="close-sidebar" id="closeSidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <a href="index.html" class="menu-link">
+            <i class="fas fa-home"></i>
+            <span>Inicio</span>
+        </a>
+        
+        <a href="transversales.html" class="menu-link">
+            <i class="fas fa-layer-group"></i>
+            <span>Componentes Transversales</span>
+        </a>
+        
+        <a href="generales.html" class="menu-link active">
+            <i class="fas fa-cubes"></i>
+            <span>Componentes Generales</span>
+        </a>
+        
+        <a href="formularios.html" class="menu-link">
+            <i class="fas fa-file-alt"></i>
+            <span>Componentes de Formulario</span>
+        </a>
+    </aside>
+
+    <main class="content page-content">
+        <div class="page-header">
+            <i class="fas fa-cubes"></i>
+            <h1>Componentes Generales</h1>
+            <p>Estructuras reutilizables en diferentes páginas</p>
+        </div>
+
+        <div class="component-section">
+            <h2>Acordeón</h2>
+            <p class="component-desc">Secciones desplegables para organizar contenido.</p>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Sección 1</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Contenido de la sección 1. Aquí puedes agregar cualquier información relevante.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Sección 2</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Contenido de la sección 2. Información adicional aquí.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="component-section">
+            <h2>Alerta notificación</h2>
+            <p class="component-desc">Mensajes informativos para el usuario.</p>
+            <div class="alert alert-success">
+                <i class="fas fa-check-circle"></i>
+                <span>Operación completada exitosamente</span>
+                <button class="alert-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="alert alert-warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>Advertencia: Revisa la información ingresada</span>
+                <button class="alert-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="alert alert-error">
+                <i class="fas fa-times-circle"></i>
+                <span>Error: No se pudo completar la operación</span>
+                <button class="alert-close"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+
+        <div class="component-section">
+            <h2>Botones</h2>
+            <p class="component-desc">Sistema unificado de botones con altura consistente de 36px.</p>
+            <div class="button-demo">
+                <button class="btn btn-primary">Primario</button>
+                <button class="btn btn-secondary">Secundario</button>
+                <button class="btn btn-danger">Peligro</button>
+            </div>
+            <div class="code-example">
+                <div class="code-header">
+                    <span>HTML</span>
+                    <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                </div>
+                <pre><code>&lt;button class="btn btn-primary"&gt;Primario&lt;/button&gt;
+&lt;button class="btn btn-secondary"&gt;Secundario&lt;/button&gt;
+&lt;button class="btn btn-danger"&gt;Peligro&lt;/button&gt;</code></pre>
+            </div>
+        </div>
+
+        <div class="component-section">
+            <h2>Buscador</h2>
+            <p class="component-desc">Campo de búsqueda unificado con icono y estilos consistentes.</p>
+            <div class="search-demo">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar...">
+                </div>
+            </div>
+        </div>
+
+        <div class="component-section">
+            <h2>Descripción emergente (Tooltip)</h2>
+            <p class="component-desc">Tooltips que aparecen al pasar el cursor sobre elementos.</p>
+            <div style="margin-top: 3rem; text-align: center;">
+                <div class="tooltip-container">
+                    <button class="btn btn-primary">Pasa el cursor aquí</button>
+                    <span class="tooltip-text">Este es un tooltip informativo</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="component-section">
+            <h2>Etiquetas</h2>
+            <p class="component-desc">Tags con variantes de color para usos generales.</p>
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem;">
+                <span class="tag tag-primary">Primario</span>
+                <span class="tag tag-success">Éxito</span>
+                <span class="tag tag-warning">Advertencia</span>
+                <span class="tag tag-danger">Peligro</span>
+                <span class="tag tag-info">Info</span>
+                <span class="tag">Neutral</span>
+            </div>
+        </div>
+
+        <div class="component-section">
+            <h2>Indicador de carga (Spinner)</h2>
+            <p class="component-desc">Spinner animado para indicar procesos en curso.</p>
+            <div class="spinner-container">
+                <div class="spinner"></div>
+            </div>
+        </div>
+
+        <div class="component-section">
+            <h2>Menú de navegación</h2>
+            <p class="component-desc">
+                Sidebar lateral con iconos y etiquetas que proporciona acceso rápido a todos los módulos del sistema.
+                Se expande al hacer hover mostrando las etiquetas completas. Incluye opciones para Inicio, Compras,
+                Ventas, Informes, Personas, Gestión de Materiales, Inventario, Configuración y Salir. El menú
+                permanece fijo en el lado izquierdo de la pantalla para facilitar la navegación.
+            </p>
+            <div class="demo-box">
+                <div class="demo-content">
+                    <div style="background: #1e3d2f; padding: 1.5rem; border-radius: 8px; width: 250px;">
+                        <div style="color: white; margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                            <i class="fas fa-home"></i>
+                            <span>Inicio</span>
+                        </div>
+                        <div style="color: white; margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; padding: 0.75rem;">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Compras</span>
+                        </div>
+                        <div style="color: white; margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; padding: 0.75rem;">
+                            <i class="fas fa-cash-register"></i>
+                            <span>Ventas</span>
+                        </div>
+                        <div style="color: white; display: flex; align-items: center; gap: 1rem; padding: 0.75rem;">
+                            <i class="fas fa-warehouse"></i>
+                            <span>Inventario</span>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+
+        <div class="component-section">
+            <h2>Miga de pan (Breadcrumb)</h2>
+            <p class="component-desc">Navegación jerárquica que muestra la ubicación actual.</p>
+            <nav class="breadcrumb">
+                <a href="#" class="breadcrumb-item">Inicio</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="#" class="breadcrumb-item">Módulo</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-item active">Página actual</span>
+            </nav>
+        </div>
+
+        <div class="component-section">
+            <h2>Módulo de inicio de sesión</h2>
+            <p class="component-desc">
+                Modal de autenticación que permite a los usuarios acceder al sistema mediante usuario y contraseña.
+                Incluye validación de campos, mensajes de error, opción de recuperación de contraseña mediante
+                pregunta secreta, y la posibilidad de crear una nueva cuenta. El diseño es limpio y centrado,
+                con el logo de Planetapp y campos claramente identificados con iconos.
+            </p>
+            <div class="demo-box">
+                <div class="demo-content">
+                    <div style="background: rgba(0,0,0,0.5); padding: 2rem; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                        <div style="background: white; padding: 2rem; border-radius: 12px; width: 100%; max-width: 400px;">
+                            <div style="text-align: center; margin-bottom: 2rem;">
+                                <div style="width: 60px; height: 60px; background: #2d5a47; border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-user" style="color: white; font-size: 1.5rem;"></i>
+                                </div>
+                                <h3>Iniciar sesión</h3>
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 8px;">
+                                    <i class="fas fa-user" style="color: #6b7280;"></i>
+                                    <input type="text" placeholder="Usuario" style="border: none; outline: none; flex: 1;">
+                                </div>
+                            </div>
+                            <div style="margin-bottom: 1.5rem;">
+                                <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 8px;">
+                                    <i class="fas fa-lock" style="color: #6b7280;"></i>
+                                    <input type="password" placeholder="Contraseña" style="border: none; outline: none; flex: 1;">
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" style="width: 100%;">Inicia sesión</button>
+                            <div style="text-align: center; margin-top: 1rem;">
+                                <a href="#" style="color: #2d5a47; font-size: 0.9rem;">¿Olvidaste tu contraseña?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="component-section">
+            <h2>Tablas</h2>
+            <p class="component-desc">Tablas de datos con estilos consistentes y botones de acción.</p>
+            <div class="table-demo">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>001</td>
+                            <td>Material A</td>
+                            <td><span class="badge badge-success">Activo</span></td>
+                            <td>
+                                <button class="action-btn"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>Material B</td>
+                            <td><span class="badge badge-success">Activo</span></td>
+                            <td>
+                                <button class="action-btn"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="component-section">
+            <h2>Tarjetas de información</h2>
+            <p class="component-desc">Cards para mostrar información organizada.</p>
+            <div class="component-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Tarjeta 1</h3>
+                        <i class="fas fa-info-circle" style="color: var(--primary);"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Contenido de la tarjeta con información relevante del sistema.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary">Acción</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Tarjeta 2</h3>
+                        <i class="fas fa-chart-line" style="color: var(--primary);"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Otra tarjeta con diferente contenido e información.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-secondary">Ver más</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+<div class="component-section">
+    <h2>Gráficas</h2>
+    <p class="component-desc">
+        Visualización de datos operativos del sistema. Se muestran dos gráficos de torta (pie):
+        materiales comprados hoy y materiales más vendidos. El estilo y colores siguen los usados en la aplicación.
+    </p>
+    <div class="charts-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1rem;">
+        <div class="chart-container" style="background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 0.75rem; box-shadow: 0 1px 4px var(--shadow);">
+            <h3 class="chart-title" style="margin: 0 0 0.75rem 0; color: var(--text); font-size: 1rem;">Materiales comprados hoy</h3>
+            <div class="chart-wrapper" style="position: relative; height: 200px;">
+                <canvas id="pieChart"></canvas>
+            </div>
+        </div>
+        <div class="chart-container" style="background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 0.75rem; box-shadow: 0 1px 4px var(--shadow);">
+            <h3 class="chart-title" style="margin: 0 0 0.75rem 0; color: var(--text); font-size: 1rem;">Materiales más vendidos</h3>
+            <div class="chart-wrapper" style="position: relative; height: 200px;">
+                <canvas id="pieChart2"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="component-section">
+    <h2>Simulación de Exportación de Reportes</h2>
+    <p class="component-desc">
+        Módulo interactivo para la generación y descarga de informes operativos. 
+        Permite visualizar los datos en tiempo real y exportarlos en formatos estandarizados (PDF y Excel) 
+        con diseño corporativo profesional.
+    </p>
+    
+    <div class="demo-box" style="background: #f8f9fa; border: 1px solid #e9ecef; padding: 0; overflow: hidden; position: relative; min-height: 400px;">
+        <!-- Toolbar simulada -->
+        <div style="padding: 1rem; border-bottom: 1px solid #e9ecef; display: flex; justify-content: flex-end; align-items: center; background: #fff;">
+            <div>
+                <button class="btn" id="btnOpenExportModal" style="background: #2d5a47; color: white; border: none; display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-download"></i> Exportar
+                </button>
+            </div>
+        </div>
+
+        <!-- Tabla de vista previa -->
+        <div style="padding: 0; overflow-x: auto;">
+            <table class="data-table" id="export-demo-table" style="width: 100%; border-collapse: collapse; background: white; margin: 0;">
+                <thead>
+                    <tr>
+                        <th style="padding: 12px 15px; text-align: left;">ID</th>
+                        <th style="padding: 12px 15px; text-align: left;">Fecha</th>
+                        <th style="padding: 12px 15px; text-align: left;">Asociado</th>
+                        <th style="padding: 12px 15px; text-align: left;">Material</th>
+                        <th style="padding: 12px 15px; text-align: right;">Peso (Kg)</th>
+                        <th style="padding: 12px 15px; text-align: right;">Total</th>
+                        <th style="padding: 12px 15px; text-align: center;">Tipo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Se llena con JS -->
+                </tbody>
+            </table>
+        </div>
+        
+        <div style="padding: 0.75rem 1rem; background: #fff; border-top: 1px solid #e9ecef; font-size: 0.85rem; color: #6c757d; display: flex; align-items: center; gap: 8px;">
+            <i class="fas fa-info-circle"></i> Los datos mostrados son generados aleatoriamente para esta simulación.
+        </div>
+
+        <!-- Modal Simulado -->
+        <div id="demoExportModal" style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10; justify-content: center; align-items: center; backdrop-filter: blur(2px);">
+            <div style="background: white; padding: 25px; border-radius: 12px; width: 320px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); text-align: center; animation: modalFadeIn 0.3s ease-out;">
+                <h4 style="margin: 0 0 20px 0; color: #2d5a47; font-size: 1.2rem;">Exportar Reporte</h4>
+
+                <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
+                    <div class="demo-export-option" id="btnExportDemoPDF" style="cursor: pointer; padding: 15px; border-radius: 12px; transition: all 0.2s; border: 1px solid transparent;">
+                        <div style="width: 60px; height: 60px; background: #ffebee; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; color: #dc3545; font-size: 28px; box-shadow: 0 4px 6px rgba(220, 53, 69, 0.1);">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <span style="font-weight: 600; color: #555; font-size: 0.9rem;">PDF</span>
+                    </div>
+                    <div class="demo-export-option" id="btnExportDemoExcel" style="cursor: pointer; padding: 15px; border-radius: 12px; transition: all 0.2s; border: 1px solid transparent;">
+                        <div style="width: 60px; height: 60px; background: #e8f5e9; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; color: #198754; font-size: 28px; box-shadow: 0 4px 6px rgba(25, 135, 84, 0.1);">
+                            <i class="fas fa-file-excel"></i>
+                        </div>
+                        <span style="font-weight: 600; color: #555; font-size: 0.9rem;">Excel</span>
+                    </div>
+                </div>
+                <button id="btnCloseExportModal" style="background: transparent; border: none; color: #6c757d; cursor: pointer; font-size: 0.9rem; padding: 8px 16px; border-radius: 4px;">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</main>
+
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Librerías para exportación (demo manual) -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+
+    <!-- CDN de Chart.js para vista previa de las gráficas -->
+    <style>
+        @keyframes modalFadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        .demo-export-option:hover { background-color: #f8f9fa; transform: translateY(-2px); border-color: #e9ecef !important; }
+        .demo-export-option:active { transform: translateY(0); }
+        #btnCloseExportModal:hover { background-color: #f1f3f5; color: #343a40; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const pieEl = document.getElementById('pieChart');
+        const pieEl2 = document.getElementById('pieChart2');
+        if (pieEl) {
+            new Chart(pieEl, {
+                type: 'pie',
+                data: {
+                    labels: ['Plástico', 'Vidrio', 'Metal', 'Papel'],
+                    datasets: [{
+                        data: [35, 20, 25, 20],
+                        backgroundColor: ['#2d5a47', '#6b7280', '#1f6feb', '#a3a3a3']
+                    }]
+                },
+                options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+            });
+        }
+        if (pieEl2) {
+            new Chart(pieEl2, {
+                type: 'pie',
+                data: {
+                    labels: ['Material A', 'Material B', 'Material C', 'Material D'],
+                    datasets: [{
+                        data: [22, 18, 30, 30],
+                        backgroundColor: ['#2d5a47', '#6b7280', '#1f6feb', '#a3a3a3']
+                    }]
+                },
+                options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+            });
+        }
+    });
+    </script>
+
+    <script>
+    (function() {
+      // Generador de datos aleatorios
+      const nombres = ['Juan Pérez', 'María Gómez', 'Carlos Ruiz', 'Ana Torres', 'Pedro López', 'Recicla S.A.', 'EcoMundo Ltda', 'Jorge Ramirez', 'Luisa Fernandez'];
+      const materiales = ['Plástico PET', 'Cartón', 'Vidrio', 'Chatarra', 'Cobre', 'Aluminio', 'Papel Archivo', 'Bronce'];
+      
+      function generarDatosAleatorios(cantidad = 5) {
+        const datos = [];
+        for(let i=0; i<cantidad; i++) {
+            const tipo = Math.random() > 0.5 ? 'compra' : 'venta';
+            const precioBase = Math.floor(Math.random() * 5000) + 500;
+            const peso = (Math.random() * 50 + 1).toFixed(2);
+            datos.push({
+                id: (tipo === 'compra' ? 'C' : 'V') + Math.floor(Math.random() * 10000).toString().padStart(4, '0'),
+                fecha: new Date(Date.now() - Math.floor(Math.random() * 1000000000)).toLocaleString('es-CO'),
+                asociado: nombres[Math.floor(Math.random() * nombres.length)],
+                documento: Math.floor(Math.random() * 90000000 + 10000000).toString(),
+                material: materiales[Math.floor(Math.random() * materiales.length)],
+                cantidadKg: peso,
+                precioTotal: (peso * precioBase),
+                tipo: tipo
+            });
+        }
+        return datos.sort((a,b) => new Date(b.fecha) - new Date(a.fecha));
+      }
+
+      let datosActuales = generarDatosAleatorios(8);
+
+      function renderizarTabla() {
+        const tbody = document.querySelector('#export-demo-table tbody');
+        if (!tbody) return;
+        
+        tbody.innerHTML = '';
+        const fmtMoney = n => '$ ' + (Number(n) || 0).toLocaleString('es-CO', { minimumFractionDigits: 0 });
+        
+        datosActuales.forEach(d => {
+          const tr = document.createElement('tr');
+          tr.style.borderBottom = '1px solid #eee';
+          tr.innerHTML = `
+            <td style="padding: 12px 15px;">${d.id}</td>
+            <td style="padding: 12px 15px;">${d.fecha}</td>
+            <td style="padding: 12px 15px;">${d.asociado}</td>
+            <td style="padding: 12px 15px;">${d.material}</td>
+            <td style="padding: 12px 15px; text-align: right;">${d.cantidadKg}</td>
+            <td style="padding: 12px 15px; text-align: right; font-weight: bold;">${fmtMoney(d.precioTotal)}</td>
+            <td style="padding: 12px 15px; text-align: center;">
+                <span class="tag ${d.tipo === 'compra' ? 'tag-success' : 'tag-primary'}" style="font-size: 0.75rem; padding: 4px 8px; border-radius: 4px; color: white; background-color: ${d.tipo === 'compra' ? '#198754' : '#0d6efd'};">
+                    ${d.tipo.toUpperCase()}
+                </span>
+            </td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      // Inicializar tabla
+      renderizarTabla();
+
+      // Listeners
+      const modal = document.getElementById('demoExportModal');
+      
+      document.getElementById('btnOpenExportModal')?.addEventListener('click', () => {
+          if(modal) modal.style.display = 'flex';
+      });
+
+      document.getElementById('btnCloseExportModal')?.addEventListener('click', () => {
+          if(modal) modal.style.display = 'none';
+      });
+
+      document.getElementById('btnExportDemoPDF')?.addEventListener('click', () => {
+          if(modal) modal.style.display = 'none';
+      });
+
+      document.getElementById('btnExportDemoExcel')?.addEventListener('click', () => {
+          if(modal) modal.style.display = 'none';
+      });
+    })();
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes Transversales - Manual Técnico</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-circle"></div>
+                <span>RENACER</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>Navegación</h3>
+            <button class="close-sidebar" id="closeSidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <a href="index.html" class="menu-link">
+            <i class="fas fa-home"></i>
+            <span>Inicio</span>
+        </a>
+        
+        <a href="transversales.html" class="menu-link active">
+            <i class="fas fa-layer-group"></i>
+            <span>Componentes Transversales</span>
+        </a>
+        
+        <a href="generales.html" class="menu-link">
+            <i class="fas fa-cubes"></i>
+            <span>Componentes Generales</span>
+        </a>
+        
+        <a href="formularios.html" class="menu-link">
+            <i class="fas fa-file-alt"></i>
+            <span>Componentes de Formulario</span>
+        </a>
+    </aside>
+
+    <main class="content page-content">
+        <div class="page-header">
+            <i class="fas fa-layer-group"></i>
+            <h1>Componentes Transversales</h1>
+            <p>Elementos que aparecen en casi todas las páginas del sistema</p>
+        </div>
+
+        
+<div class="component-section">
+    <h2>Iconografía</h2>
+    <p class="component-desc">Sistema de iconos basado en FontAwesome 6, utilizados en menús, botones y acciones.</p>
+    <div class="icon-grid">
+        <div class="icon-item"><i class="fas fa-home"></i><span>Inicio</span></div>
+        <div class="icon-item"><i class="fas fa-shopping-cart"></i><span>Compras</span></div>
+        <div class="icon-item"><i class="fas fa-sack-dollar"></i><span>Ventas</span></div>
+        <div class="icon-item"><i class="fas fa-warehouse"></i><span>Inventario</span></div>
+        <div class="icon-item"><i class="fas fa-chart-line"></i><span>Movimientos</span></div>
+        <div class="icon-item"><i class="fas fa-cog"></i><span>Configuración</span></div>
+        <div class="icon-item"><i class="fas fa-user"></i><span>Perfil</span></div>
+        <div class="icon-item"><i class="fas fa-search"></i><span>Buscar</span></div>
+    </div>
+</div>
+
+
+        <div class="component-section">
+            <h2>Barra superior</h2>
+            <p class="component-desc">
+                Parte superior donde se muestra la información del usuario logueado.
+                Incluye avatar del usuario, nombre y rol. Se mantiene fija en la parte
+                superior de cada módulo para facilitar el acceso a las opciones de usuario.
+            </p>
+            <div class="demo-box">
+                <div class="demo-header">
+                    <span class="demo-label">Vista previa</span>
+                </div>
+                <div class="demo-content">
+                    <div style="background: #f9fafb; padding: 1rem; border-radius: 8px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h3 style="margin: 0; color: #2d5a47;">Módulo de Ejemplo</h3>
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <div style="width: 35px; height: 35px; background: #2d5a47; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 0.9rem; font-weight: 600;">Usuario</div>
+                                        <div style="font-size: 0.8rem; color: #6b7280;">Administrador</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="component-section">
+            <h2>Sistema de Colores</h2>
+            <p class="component-desc">Paleta oficial del proyecto Renacer utilizada en todo el sistema.</p>
+            <div class="color-palette-grid">
+                <div class="color-box-item">
+                    <div class="color-preview" style="background: #2d5a47;"></div>
+                    <span class="color-label">Primario</span>
+                    <code>#2d5a47</code>
+                </div>
+                <div class="color-box-item">
+                    <div class="color-preview" style="background: #244a3a;"></div>
+                    <span class="color-label">Primario Hover</span>
+                    <code>#244a3a</code>
+                </div>
+                <div class="color-box-item">
+                    <div class="color-preview" style="background: #6b7280;"></div>
+                    <span class="color-label">Secundario</span>
+                    <code>#6b7280</code>
+                </div>
+                            </div>
+        </div>
+
+        <div class="component-section">
+            <h2>Cabecera</h2>
+            <p class="component-desc">Encabezado principal que muestra el título del módulo actual y la información del usuario.</p>
+            <div class="code-example">
+                <pre><code>&lt;header class="header"&gt;
+  &lt;h1 id="module-title"&gt;Módulo&lt;/h1&gt;
+  &lt;div class="user-info"&gt;
+    &lt;div class="user-avatar"&gt;&lt;i class="fas fa-user"&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class="user-details"&gt;
+      &lt;span class="user-name"&gt;Usuario&lt;/span&gt;
+      &lt;span class="user-role"&gt;Rol&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+            </div>
+        </div>
+
+        <div class="component-section">
+            <h2>Tipografía</h2>
+            <p class="component-desc">Sistema tipográfico basado en fuentes del sistema para máxima legibilidad.</p>
+            <div class="typo-sample">
+                <h1>Título Principal - 28px</h1>
+                <h2>Título Secundario - 24px</h2>
+                <h3>Título Terciario - 20px</h3>
+                <p>Texto base - 18px. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <small>Texto pequeño - 15px</small>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+        

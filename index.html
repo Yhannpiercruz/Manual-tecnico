@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Técnico - Renacer</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-circle"></div>
+                <span>RENACER</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-bg-shape"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-main">MANUAL</span>
+                    <span class="title-sub">TÉCNICO</span>
+                </h1>
+                <p class="hero-text">
+                    Documentación completa del sistema de gestión<br>
+                    de reciclaje Planetapp. Componentes, guías y estándares<br>
+                    de diseño para el proyecto Renacer.
+                </p>
+                <p class="hero-subtext">
+                    Este manual proporciona una referencia detallada de todos los componentes<br>
+                    del sistema, incluyendo ejemplos de código, mejores prácticas y guías<br>
+                    de implementación para desarrolladores y diseñadores.
+                </p>
+            </div>
+            <div class="hero-image">
+                <div class="image-frame">
+                    <div class="image-placeholder">
+                        <img src="logo.png" alt="Planetapp Logo" class="hero-logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>Navegación</h3>
+            <button class="close-sidebar" id="closeSidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <a href="index.html" class="menu-link active">
+            <i class="fas fa-home"></i>
+            <span>Inicio</span>
+        </a>
+        
+        <a href="transversales.html" class="menu-link">
+            <i class="fas fa-layer-group"></i>
+            <span>Componentes Transversales</span>
+        </a>
+        
+        <a href="generales.html" class="menu-link">
+            <i class="fas fa-cubes"></i>
+            <span>Componentes Generales</span>
+        </a>
+        
+        <a href="formularios.html" class="menu-link">
+            <i class="fas fa-file-alt"></i>
+            <span>Componentes de Formulario</span>
+        </a>
+    </aside>
+
+    <main class="content">
+        <section class="intro-section">
+            <div class="intro-header">
+                <h2>Bienvenido al Manual Técnico</h2>
+                <p>Guía completa de componentes, operación y despliegue del Sistema Renacer</p>
+            </div>
+            
+            <div class="intro-description">
+                <p>
+                    Este manual técnico documenta los componentes visuales y también los procedimientos operativos
+                    clave: cómo levantar el entorno con Docker, compilar/ejecutar el backend (Gradle/Java), iniciar
+                    el frontend (Vite/React o vistas estáticas), diagnosticar errores y preparar despliegues.
+                </p>
+                <p>
+                    Usa la navegación lateral para componentes; y las secciones siguientes para operación técnica.
+                </p>
+            </div>
+            
+            <div class="intro-grid">
+                <a href="transversales.html" class="intro-card">
+                    <div class="card-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Componentes Transversales</h3>
+                    <p>
+                        Elementos fundamentales presentes en todo el sistema: accesibilidad, colores, tipografía,
+                        cabecera de usuario, iconografía y navegación.
+                    </p>
+                    <span class="count">5 componentes</span>
+                </a>
+                
+                <a href="generales.html" class="intro-card">
+                    <div class="card-icon">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                    <h3>Componentes Generales</h3>
+                    <p>
+                        Estructuras reutilizables: botones, tablas, modales, alertas, menús, tabs, acordeones,
+                        tarjetas, loaders, progreso, tooltips y etiquetas.
+                    </p>
+                    <span class="count">14 componentes</span>
+                </a>
+                
+                <a href="formularios.html" class="intro-card">
+                    <div class="card-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Componentes de Formulario</h3>
+                    <p>
+                        Inputs, selects, checkboxes, radios y carga de archivos con validación y mensajes de error.
+                    </p>
+                    <span class="count">3 componentes</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="intro-section">
+            <div class="intro-header">
+                <h2>Operación técnica</h2>
+                <p>Levantamiento con Docker, ejecución local, diagnóstico y mantenimiento</p>
+            </div>
+
+            <div class="intro-description">
+                <h3><i class="fas fa-box"></i> Levantar todo con Docker</h3>
+                <ul>
+                    <li>Requisitos: Docker Desktop y docker-compose.</li>
+                    <li>Desde la raíz del proyecto: <code>docker-compose up -d</code></li>
+                    <li>Verificación: <code>docker ps</code> y URLs en <em>URLS-DEL-SISTEMA.md</em>.</li>
+                </ul>
+
+                <h3><i class="fas fa-server"></i> Backend (Gradle/Java)</h3>
+                <ul>
+                    <li>JDK recomendado: 21 (ver <em>build_log_jdk21.txt</em>).</li>
+                    <li>Compilar: <code>gradlew clean build -x test</code></li>
+                    <li>Ejecutar: <code>start-server.bat</code> o <code>gradlew :renacer-institucional:bootRun</code></li>
+                    <li>Logs: revisar <em>build_log_*.txt</em> y <em>build_error_stacktrace.txt</em> en la raíz.</li>
+                </ul>
+
+                <h3><i class="fas fa-desktop"></i> Frontend</h3>
+                <ul>
+                    <li>Vite/React: <code>cd Frontend</code>, <code>npm install</code>, <code>npm run dev</code>.</li>
+                    <li>Vistas estáticas: abrir <em>Frontend/index.html</em> o servir con Nginx (ver <em>nginx.conf</em>).</li>
+                    <li>Variables: ajustar <em>.env.production</em> y <em>vite.config.js</em> si cambia el host del backend.</li>
+                </ul>
+
+                <h3><i class="fas fa-stethoscope"></i> Diagnóstico</h3>
+                <ul>
+                    <li>Build backend: <em>build_log_*.txt</em>, <em>build_output.txt</em>.</li>
+                    <li>Scripts útiles: <em>limpiar-gradle.bat</em>, <em>resetear-base-datos.bat</em>, <em>clean_usecases.ps1</em>.</li>
+                    <li>Errores comunes: versión JDK incorrecta, dependencias Gradle, endpoints en <em>Frontend/controller/js/api.js</em>.</li>
+                </ul>
+
+                <h3><i class="fas fa-cog"></i> Configuración</h3>
+                <ul>
+                    <li>Backend: <em>gradle.properties</em>, perfiles y variables según entorno.</li>
+                    <li>Frontend: <em>.env.production</em>, <em>vite.config.js</em>.</li>
+                    <li>Nginx/Docker: revisar <em>Frontend/nginx.conf</em> y Dockerfiles en raíz y módulos.</li>
+                </ul>
+
+                <h3><i class="fas fa-cloud-upload-alt"></i> Despliegue</h3>
+                <ul>
+                    <li>Railway: seguir <em>RAILWAY_COPIAR_PEGAR.md</em> y <em>Resumen_Cambios_Railway.md</em>.</li>
+                    <li>Variables/secretos: definir equivalentes a <em>.env.production</em> en el proveedor.</li>
+                </ul>
+
+                <h3><i class="fas fa-tools"></i> Mantenimiento</h3>
+                <ul>
+                    <li>Base de datos de desarrollo: <em>Backend/renacer-institucional/data</em> (<code>renacer.mv.db</code>).</li>
+                    <li>Reset: <em>resetear-base-datos.bat</em>.</li>
+                    <li>Limpieza Gradle: <em>limpiar-gradle.bat</em>.</li>
+                </ul>
+
+                <h3><i class="fas fa-book"></i> Referencias rápidas</h3>
+                <ul>
+                    <li>Arquitectura y reglas: <em>ARCHITECTURE.md</em>, <em>BUSINESS_RULES.md</em>, <em>SOLUCION_STOCK_MOVEMENTS.md</em>.</li>
+                    <li>Guías: <em>INSTRUCCIONES-RECOMPILAR.md</em>, <em>INICIO-FRONTEND.md</em>, <em>README-REACT.md</em>.</li>
+                    <li>Scripts: <em>iniciar-todo.bat</em>, <em>iniciar-todo-cmd.bat</em>, <em>iniciar-todo-ps1.ps1</em>.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes de Formulario - Manual Técnico</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span>RENACER</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>Navegación</h3>
+            <button class="close-sidebar" id="closeSidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <a href="index.html" class="menu-link">
+            <i class="fas fa-home"></i>
+            <span>Inicio</span>
+        </a>
+        
+        <a href="transversales.html" class="menu-link">
+            <i class="fas fa-layer-group"></i>
+            <span>Componentes Transversales</span>
+        </a>
+        
+        <a href="generales.html" class="menu-link">
+            <i class="fas fa-cubes"></i>
+            <span>Componentes Generales</span>
+        </a>
+        
+        <a href="formularios.html" class="menu-link active">
+            <i class="fas fa-file-alt"></i>
+            <span>Componentes de Formulario</span>
+        </a>
+    </aside>
+
+    <main class="content page-content">
+        <div class="page-header">
+            <i class="fas fa-file-alt"></i>
+            <h1>Componentes de Formulario</h1>
+            <p>Elementos para captura de datos del usuario</p>
+        </div>
+
+        <div class="component-section">
+            <h2>Desplegables (Select)</h2>
+            <p class="component-desc">Selectores con estilos personalizados para elegir opciones.</p>
+            <div class="form-showcase">
+                <div class="form-group">
+                    <label>Categoría</label>
+                    <select>
+                        <option>Seleccione una opción</option>
+                        <option>Plástico</option>
+                        <option>Papel</option>
+                        <option>Vidrio</option>
+                        <option>Metal</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Estado</label>
+                    <select>
+                        <option>Activo</option>
+                        <option>Inactivo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="code-example">
+                <div class="code-header">
+                    <span>HTML</span>
+                    <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                </div>
+                <pre><code>&lt;div class="form-group"&gt;
+  &lt;label&gt;Categoría&lt;/label&gt;
+  &lt;select&gt;
+    &lt;option&gt;Seleccione una opción&lt;/option&gt;
+    &lt;option&gt;Opción 1&lt;/option&gt;
+    &lt;option&gt;Opción 2&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+
+        <div class="component-section">
+            <h2>Entradas de texto</h2>
+            <p class="component-desc">Campos de formulario con estilos consistentes y estados de focus.</p>
+            <div class="form-showcase">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" placeholder="Ingrese el nombre">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="correo@ejemplo.com">
+                </div>
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <input type="tel" placeholder="(123) 456-7890">
+                </div>
+                <div class="form-group">
+                    <label>Descripción</label>
+                    <textarea rows="4" placeholder="Ingrese una descripción"></textarea>
+                </div>
+            </div>
+            <div class="code-example">
+                <div class="code-header">
+                    <span>HTML</span>
+                    <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                </div>
+                <pre><code>&lt;div class="form-group"&gt;
+  &lt;label&gt;Nombre&lt;/label&gt;
+  &lt;input type="text" placeholder="Ingrese el nombre"&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+
+        <div class="component-section">
+            <h2>Ejemplo de Formulario Completo</h2>
+            <p class="component-desc">Ejemplo de un formulario completo utilizando todos los componentes.</p>
+            <div class="form-showcase">
+                <form>
+                    <div class="form-group">
+                        <label>Nombre del Material</label>
+                        <input type="text" placeholder="Ej: Plástico PET">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Categoría</label>
+                        <select>
+                            <option>Seleccione una categoría</option>
+                            <option>Plástico</option>
+                            <option>Papel</option>
+                            <option>Vidrio</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Precio por Kg</label>
+                        <input type="number" placeholder="0.00">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Descripción</label>
+                        <textarea rows="3" placeholder="Descripción del material"></textarea>
+                    </div>
+                    
+                    <label class="custom-checkbox">
+                        <input type="checkbox">
+                        <span>Material activo</span>
+                    </label>
+                    
+                    <div class="form-actions" style="margin-top: 2rem;">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <button type="button" class="btn btn-secondary">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
